@@ -1,0 +1,46 @@
+$tech-green: #BED23C;
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  margin-top: 60px;
+}
+section div {
+  display: flex;
+  flex-direction: row;
+}
+
+.tech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  background-color: $tech-green;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  text-align: center;
+}
+
+.tech-img {
+  width: 100px;
+  height: 100px;
+}
+
+.text-big{
+  font-size: 24px;
+}
+
+.text-medium {
+  font-size: 16px;
+}
+
+.text-small {
+  font-size: 12px;
+}
