@@ -1,18 +1,15 @@
-* {
-  font-family: 'Roboto', sans-serif;
-}
-
 .title-image {
   width: 90px;
   height: 70px;
 }
 
 .title-decoration {
- position: relative;
- margin-left: -100px;
+  margin-left: -100px;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
 }
 
-.title-decoration p {
+.title-text {
   margin-left: -31px;
-  margin-top: 28px;
 }
