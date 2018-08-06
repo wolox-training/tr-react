@@ -1,12 +1,29 @@
 $tech-green: #BED23C;
 
-.container-tech {
-  display: flex;
+.m-bottom-1 {
+  margin-bottom: 10px;
 }
 
+.m-bottom-2 {
+  margin-bottom: 20px;
+}
+
+.m-top-1 {
+  margin-top: 10px;
+}
+
+.m-top-2 {
+  margin-top: 20px;
+}
+
+.container-tech {
+  display: flex;
+  max-width: 930px;
+  flex-wrap: wrap;
+}
 .tech {
   position: relative;
-  display: flex;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
   width: 200px;
@@ -17,28 +34,31 @@ $tech-green: #BED23C;
   -moz-border-radius: 5px 5px 5px 5px;
   -webkit-border-radius: 5px 5px 5px 5px;
   text-align: center;
-}
 
-.tech:after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  box-shadow: inset 0 0 0 2px $tech-green;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
+  &::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    box-shadow: inset 0 0 0 2px $tech-green;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+  }
 
-.tech:hover:after {
-  content: '';
-  top: 10px;
-  left: 10px;
-  transition: all 1s ease 0s;
-  -webkit-transition: all 1s ease 0s;
+  &:hover::after {
+    content: '';
+    top: 10px;
+    left: 10px;
+    transition: all 1s ease 0s;
+    -webkit-transition: all 1s ease 0s;
+  }
+}
+.one-tech{
+  flex-wrap: wrap;
 }
 
 .text-big {
@@ -56,4 +76,9 @@ $tech-green: #BED23C;
 
 .text-small {
   font-size: 12px;
+}
+
+.wrapper-tech {
+  display: flex;
+  justify-content: center;
 }
