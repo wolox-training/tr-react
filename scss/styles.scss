@@ -1,3 +1,5 @@
+$tech-green: #BED23C;
+
 * {
   font-family: 'Roboto', sans-serif;
 }
@@ -58,4 +60,48 @@
 .text-small {
   font-size: 12px;
   display: block;
+}
+
+/**** Responsive ****/
+@media only screen and (max-width: 1024px) {
+
+  .color-text-footer:nth-child(3) {
+    align-self: center !important;
+    margin-top: 70px;
+    margin-bottom: 60px;
+  }
+
+  .container-tech {
+    display: inline-block !important;
+  }
+
+  .divisor-line {
+    display: none;
+  }
+
+  .navbar-image {
+    height: 150px !important;
+    width: 280px !important;
+  }
+
+  .tech {
+    border-bottom: 1px solid $tech-green;
+  }
+
+  .tech:last-child {
+    border-bottom: none;
+  }
+
+  .text-small {
+    display: inline-block;
+  }
+
+  .title-navbar {
+    display: none;
+  }
+
+  .title-decoration {
+    margin-left: 35% !important;
+    margin-top: 190px;
+  }
 }
