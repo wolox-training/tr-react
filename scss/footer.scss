@@ -1,0 +1,21 @@
+$footer-white: #FFF;
+
+.color-text-footer {
+  color: $footer-white;
+}
+
+.color-text-footer:nth-child(3) {
+  align-self: flex-end;
+}
+
+.container-footer {
+  display: flex;
+  background-color: #00ADEE;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper-footer {
+  display: flex;
+  flex-direction: column;
+}

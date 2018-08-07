@@ -1,21 +1,5 @@
 $tech-green: #BED23C;
 
-.m-bottom-1 {
-  margin-bottom: 10px;
-}
-
-.m-bottom-2 {
-  margin-bottom: 20px;
-}
-
-.m-top-1 {
-  margin-top: 10px;
-}
-
-.m-top-2 {
-  margin-top: 20px;
-}
-
 .container-tech {
   display: flex;
   max-width: 930px;
@@ -24,9 +8,6 @@ $tech-green: #BED23C;
 
 .tech {
   position: relative;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
   width: 200px;
   background-color: $tech-green;
   margin: 15px;
@@ -59,21 +40,9 @@ $tech-green: #BED23C;
   }
 }
 
-.text-big {
-  font-size: 24px;
-}
-
 .tech-img {
   width: 100px;
   height: 100px;
-}
-
-.text-medium {
-  font-size: 16px;
-}
-
-.text-small {
-  font-size: 12px;
 }
 
 .wrapper-tech {
