@@ -1,3 +1,9 @@
+.navbar-image {
+  height: 90px;
+  width: 200px;
+  margin-left: 20px;
+}
+
 .container-navbar {
   position: fixed;
   width: 100%;
@@ -10,10 +16,4 @@
   background-color: $white;
   top: 0;
   justify-content: space-between;
-}
-
-.navbar-image {
-  height: 90px;
-  width: 200px;
-  margin-left: 20px;
 }
