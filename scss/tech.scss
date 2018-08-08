@@ -30,9 +30,9 @@ $tech-green: #BED23C;
   background-color: $tech-green;
   margin: 15px;
   padding: 20px;
-  border-radius: 5px 5px 5px 5px;
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   text-align: center;
 
   &::after {
