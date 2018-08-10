@@ -1,5 +1,5 @@
 .color-text-footer {
-  color: white;
+  color: $white;
 }
 
 .color-text-footer:nth-child(3) {
@@ -8,7 +8,7 @@
 
 .container-footer {
   display: flex;
-  background-color: #00ADEE;
+  background-color: $cerulean;
   flex-direction: column;
   align-items: center;
 }
