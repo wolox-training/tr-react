@@ -1,0 +1,19 @@
+.color-text-footer {
+  color: $white;
+}
+
+.color-text-footer:nth-child(3) {
+  align-self: flex-end;
+}
+
+.container-footer {
+  display: flex;
+  background-color: $cerulean;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper-footer {
+  display: flex;
+  flex-direction: column;
+}

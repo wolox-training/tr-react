@@ -1,0 +1,19 @@
+.navbar-image {
+  height: 90px;
+  width: 200px;
+  margin-left: 20px;
+}
+
+.container-navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  -webkit-box-shadow: 0 7px 30px -5px $shadow-black;
+  -moz-box-shadow: 0 7px 30px -5px $shadow-black;
+  box-shadow: 0 7px 30px -5px $shadow-black;
+  z-index: 2;
+  background-color: $white;
+  top: 0;
+  justify-content: space-between;
+}
