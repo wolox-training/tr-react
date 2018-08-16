@@ -64,23 +64,19 @@
 /**** Responsive ****/
 @media only screen and (max-width: 1024px) {
 
-  .color-text-footer:nth-child(3) {
-    align-self: center !important;
+  .color-text-footer:last-child {
+    align-self: center;
     margin-top: 70px;
     margin-bottom: 60px;
   }
 
-  .container-tech {
-    display: inline-block !important;
+  .container-navbar > img {
+    height: 150px;
+    width: 280px;
   }
 
   .divisor-line {
     display: none;
-  }
-
-  .navbar-image {
-    height: 150px !important;
-    width: 280px !important;
   }
 
   .tech {
@@ -100,7 +96,10 @@
   }
 
   .title-decoration {
-    margin-left: 35% !important;
     margin-top: 190px;
+  }
+
+  .wrapper-tech > div {
+    display: inline-block;
   }
 }
