@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "ajv-keywords": "^3.2.0",
+    "apisauce": "^0.16.0",
     "prop-types": "latest",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
