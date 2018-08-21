@@ -59,3 +59,47 @@
   font-size: 12px;
   display: block;
 }
+
+
+/**** Responsive ****/
+@media only screen and (max-width: 1024px) {
+
+  .color-text-footer:last-child {
+    align-self: center;
+    margin-top: 70px;
+    margin-bottom: 60px;
+  }
+
+  .container-navbar > img {
+    height: 150px;
+    width: 280px;
+  }
+
+  .divisor-line {
+    display: none;
+  }
+
+  .tech {
+    border-bottom: 1px solid $earls-green;
+  }
+
+  .tech:last-child {
+    border-bottom: none;
+  }
+
+  .text-small {
+    display: inline-block;
+  }
+
+  .title-navbar {
+    display: none;
+  }
+
+  .title-decoration {
+    margin-top: 190px;
+  }
+
+  .wrapper-tech > div {
+    display: inline-block;
+  }
+}
