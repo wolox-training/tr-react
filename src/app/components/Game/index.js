@@ -6,6 +6,7 @@ import styles from './styles.scss';
 class Game extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       history: [
         {
@@ -16,6 +17,24 @@ class Game extends Component {
       stepNumber: 0
     };
   }
+
+  jumpTo(step) {
+    this.setState({
+      stepNumber: step,
+      xIsNext: step % 2 === 0
+    });
+  }
+
+  calculateWinner = squares => {
+    const lines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+    for (let i = 0; i < lines.length; i += 1) {
+      const [a, b, c] = lines[i];
+        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+          return squares[a];
+      }
+    }
+    return null;
+  };
 
   handleClick(i) {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
@@ -36,23 +55,6 @@ class Game extends Component {
     });
   }
 
-  jumpTo(step) {
-    this.setState({
-      stepNumber: step,
-      xIsNext: step % 2 === 0
-    });
-  }
-  calculateWinner(squares) {
-    const lines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
-    for (let i = 0; i < lines.length; i += 1) {
-      const [a, b, c] = lines[i];
-      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        return squares[a];
-      }
-    }
-    return null;
-  }
-
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
@@ -61,7 +63,7 @@ class Game extends Component {
     const moves = history.map((step, move) => {
       const desc = move ? `Go to move #${move}` : 'Go to game start';
       return (
-        <li key={move}>
+        <li key={desc}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
       );

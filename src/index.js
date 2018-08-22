@@ -1,10 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
+
+import Login from '~components/Login';
+
+import Game from '~components/Game';
+
+import { store } from './redux/store';
 
 import './scss/index.scss';
-import registerServiceWorker from './registerServiceWorker';
 
-import Game from '~components/Game'; // eslint-disable-line import/first
+ReactDOM.render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" component={Login} />
+        <Route path="/" component={Game} />
+      </Switch>
+    </BrowserRouter>
+  </Provider>,
 
-ReactDOM.render(<Game />, document.getElementById('root'));
-registerServiceWorker();
+  document.getElementById('root')
+);
