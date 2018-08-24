@@ -12,14 +12,15 @@ class Game extends Component {
     ],
     xIsNext: true,
     stepNumber: 0,
-    winner: null
+    winner: null,
+    status: `Next player: X`
   };
 
   handleClick(i) {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
-    if (this.state.winner) {
+    if (this.calculateWinner(squares) && this.state.stepNumber + 1 === this.state.history.length) {
       return;
     }
     squares[i] = this.state.xIsNext ? 'X' : 'O';
@@ -33,16 +34,34 @@ class Game extends Component {
       xIsNext: !this.state.xIsNext
     });
     if (this.calculateWinner(squares)) {
-      this.setState({ winner: squares[i] });
+      this.setState({
+        winner: squares[i],
+        status: `Winner: ${squares[i]}`
+      });
+    } else {
+      this.setState({
+        status: `Next player: ${!this.state.xIsNext ? 'X' : 'O'}`
+      });
     }
   }
 
   jumpTo(step) {
-    this.setState({
-      stepNumber: step,
-      xIsNext: step % 2 === 0,
-      winner: null
-    });
+    const { history } = this.state;
+    const current = history[step];
+    const winner = this.calculateWinner(current.squares);
+    if (winner) {
+      this.setState({
+        stepNumber: step,
+        xIsNext: step % 2 === 0,
+        status: `Winner: ${winner}`
+      });
+    } else {
+      this.setState({
+        stepNumber: step,
+        xIsNext: step % 2 === 0,
+        status: `Next player: ${step % 2 === 0 ? 'X' : 'O'}`
+      });
+    }
   }
 
   calculateWinner = squares => {
@@ -57,7 +76,7 @@ class Game extends Component {
   };
 
   render() {
-    const { history, winner, xIsNext, stepNumber } = this.state;
+    const { history, status, stepNumber } = this.state;
     const current = history[stepNumber];
     const moves = history.map((step, move) => {
       const desc = move ? `Go to move #${move}` : 'Go to game start';
@@ -67,13 +86,6 @@ class Game extends Component {
         </li>
       );
     });
-
-    let status;
-    if (winner) {
-      status = `Winner: ${winner}`;
-    } else {
-      status = `Next player: ${xIsNext ? 'X' : 'O'}`;
-    }
 
     return (
       <div className={styles.game}>
