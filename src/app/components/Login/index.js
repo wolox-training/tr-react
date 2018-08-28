@@ -1,23 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { actionCreators as loginActions } from '../../../redux/Login/actions';
 
 import Login from './layout';
 
 class LoginContainer extends Component {
-  setNotification = message => {
-    if (message) {
-      this.props.offNotification();
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.error) {
+      this.props.notificationError();
     }
-  };
+
+    if (nextProps.logged && !nextProps.error) {
+      this.props.history.push('/app');
+    }
+  }
   submit = values => {
     this.props.checkLogin(values);
   };
 
   render() {
-    this.setNotification(this.props.error);
     return (
       <Login
         onSubmit={this.submit}
@@ -38,24 +42,29 @@ LoginContainer.propTypes = {
   checkLogin: PropTypes.func,
   loading: PropTypes.bool,
   error: PropTypes.string,
-  offNotification: PropTypes.func
+  notificationError: PropTypes.func,
+  logged: PropTypes.bool,
+  history: PropTypes.object
 };
 
 const mapStateToProps = state => ({
   loading: state.login.loading,
-  error: state.login.error
+  error: state.login.error,
+  logged: state.login.logged
 });
 
 const mapDispatchToProps = dispatch => ({
   checkLogin: (...args) => {
     dispatch(loginActions.checkLogin(args));
   },
-  offNotification: () => {
+  notificationError: () => {
     dispatch(loginActions.offNotification());
   }
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(LoginContainer);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(LoginContainer)
+);

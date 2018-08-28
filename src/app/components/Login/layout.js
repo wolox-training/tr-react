@@ -22,7 +22,6 @@ const validate = values => {
 
 const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
   <div className={styles.mTop10}>
-    <label>{label}</label>
     <div className={styles.mTop10}>
       <input {...input} placeholder={label} className={styles.inputLogin} type={type} />
       {touched &&
@@ -80,5 +79,5 @@ Login.propTypes = {
 
 export default reduxForm({
   form: 'login', // a unique identifier for this form
-  validate, // <--- validation function given to redux-form
+  validate // <--- validation function given to redux-form
 })(Login);

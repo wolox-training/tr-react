@@ -10,21 +10,28 @@ export const login = (state = initialState, action) => {
   switch (action.type) {
     case CHECK_USER:
       return state.merge({
-        loading: true
+        loading: true,
+        logged: false
       });
 
     case SET_LOGGED_USER:
-      return { ...state, login: action.payload };
+      return state.merge({
+        loading: false,
+        logged: action.logged,
+        name: action.name
+      });
 
     case ERROR_VALIDATION:
       return state.merge({
         loading: false,
-        error: action.payload
+        error: action.payload,
+        logged: false
       });
     case OFF_NOTIFICATION:
       return state.merge({
         error: null,
-        loading: false
+        loading: false,
+        logged: false
       });
 
     default:

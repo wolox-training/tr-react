@@ -10,13 +10,14 @@ export const actionCreators = {
   checkLogin(valuesForm) {
     return async dispatch => {
       dispatch({
-        type: CHECK_USER
+        type: CHECK_USER,
+        logged: false,
+        loading: true
       });
 
       const response = await LoginService.checkLogin();
-
+      const responseJsonServer = JSON.parse(JSON.stringify(response.data[0]));
       if (response.ok) {
-        const responseJsonServer = JSON.parse(JSON.stringify(response.data[0]));
         const objectValuesForm = JSON.parse(JSON.stringify(valuesForm[0]));
         if (
           responseJsonServer.email !== objectValuesForm.email ||
@@ -37,7 +38,8 @@ export const actionCreators = {
       }
       dispatch({
         type: SET_LOGGED_USER,
-        logged: false
+        logged: true,
+        name: responseJsonServer.name
       });
     };
   },

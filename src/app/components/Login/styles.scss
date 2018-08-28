@@ -1,14 +1,4 @@
-$Alabaster: #F7F7F7;
-$Alto: #DDD;
-$Turquoise: #45D6D6;
-$Scooter: #2CBBBB;
-$JungleGreen: #27A0A0;
-$White: #FFF;
-$Tundora: #4D4D4D;
-
-body {
-  background: $Alabaster;
-}
+@import '../../../scss/colors';
 
 .button-login:hover {
   background: $Turquoise linear-gradient(to bottom, $Turquoise 5%, $Scooter 100%);
@@ -40,17 +30,16 @@ body {
 }
 
 .container-inputs {
-    font-family: 'Open Sans Condensed', arial, sans;
-    width: 500px;
-    padding: 30px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
-    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
-    -webkit-box-shadow:  0 0 15px rgba(0, 0, 0, 0.22);
+  font-family: 'Open Sans Condensed', arial, sans;
+  width: 500px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
 }
 
 .container-inputs input[type="password"],
-.container-inputs input[type="email"]
-{
+.container-inputs input[type="email"] {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -104,7 +93,6 @@ body {
   width: 500px;
 }
 
-
 * {
   font-family: 'Roboto', sans-serif;
   padding: 0;
@@ -123,7 +111,7 @@ body {
 
 .alert-box {
   font-size: 16px;
-  color: white;
+  color: $White;
   background: rgba(0, 0, 0, 0.9);
   line-height: 1.3em;
   padding: 10px 15px;
@@ -135,39 +123,6 @@ body {
 
 .alert-box.hide {
   opacity: 0;
-}
-
-.alert-close {
-  background: transparent;
-  width: 12px;
-  height: 12px;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-}
-
-.alert-close:before,
-.alert-close:after {
-  content: '';
-  width: 15px;
-  border-top: solid 2px white;
-  position: absolute;
-  top: 5px;
-  right: -1px;
-  display: block;
-}
-
-.alert-close:before {
-  transform: rotate(45deg);
-}
-
-.alert-close:after {
-  transform: rotate(135deg);
-}
-
-.alert-close:hover:before,
-.alert-close:hover:after {
-  border-top: solid 2px #d8d8d8;
 }
 
 @media (max-width: 767px) and (min-width: 481px) {
@@ -196,31 +151,35 @@ body {
 .alert-message-box {
   font-size: 20px;
   width: 300px;
-  border: solid 1px #444;
+  border: solid 1px $Tundora;
   padding: 10px 15px;
   outline: none;
   transition: box-shadow 0.1s;
 }
 
 .alert-message-box:focus {
-  box-shadow: 0 0 15px 2px #888;
+  box-shadow: 0 0 15px 2px $Gray;
 }
 
 .alert-message-button {
   font-size: 18px;
-  color: white;
-  background: #14b9ff;
+  color: $White;
+  background: $DodgerBlue;
   width: 250px;
-  border: solid 1px #14b9ff;
+  border: solid 1px $DodgerBlue;
   padding: 10px 20px;
   margin-top: 5px;
   cursor: pointer;
   outline: none;
   transition: background 0.1s;
+  &:hover {
+    background: $Anakiwa;
+  }
+  &:focus {
+    background: $Anakiwa;
+  }
+  &.active {
+    background: $Anakiwa;
+  }
 }
 
-.alert-message-button:hover,
-.alert-message-button:focus,
-.alert-message-button:active {
-  background: #7dd8ff;
-}
