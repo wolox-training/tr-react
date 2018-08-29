@@ -1,0 +1,10 @@
+.border-container {
+  border-bottom: 1px solid #999;
+  border-left: 1px solid #999;
+}
+
+.board-row {
+    clear: both;
+    content: "";
+    display: table;
+}
