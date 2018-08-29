@@ -9,9 +9,9 @@ const Square = props => (
   </button>
 );
 
-export default Square;
-
 Square.propTypes = {
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   value: PropTypes.string
 };
+
+export default Square;

@@ -11,8 +11,8 @@ class Board extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <div className={styles.status}>{status}</div>
+      <div className={styles.borderContainer}>
+        <div>{status}</div>
         <div className={styles.boardRow}>
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -28,14 +28,14 @@ class Board extends Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
 
-export default Board;
-
 Board.propTypes = {
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   squares: PropTypes.instanceOf(Array)
 };
+
+export default Board;

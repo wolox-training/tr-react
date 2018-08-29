@@ -1,9 +1,10 @@
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
+.border-container {
+  border-bottom: 1px solid #999;
+  border-left: 1px solid #999;
 }
 
-.status {
-  margin-bottom: 10px;
+.board-row {
+    clear: both;
+    content: "";
+    display: table;
 }
