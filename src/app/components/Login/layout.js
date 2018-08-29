@@ -50,7 +50,7 @@ const Login = props => {
           </div>
           <div className={(styles.mTop10, styles.containerButton)}>
             <button className={styles.buttonLogin} type="submit" disabled={loadingForm || submitting}>
-              {loadingForm ? <FontAwesomeIcon icon="spinner" /> : 'Ingresar'}
+              {loadingForm ? <FontAwesomeIcon icon="spinner" spin /> : 'Ingresar'}
             </button>
             <button
               type="button"

@@ -14,33 +14,37 @@ export const actionCreators = {
         logged: false,
         loading: true
       });
-
       const response = await LoginService.checkLogin();
-      const responseJsonServer = JSON.parse(JSON.stringify(response.data[0]));
-      if (response.ok) {
-        const objectValuesForm = JSON.parse(JSON.stringify(valuesForm[0]));
-        if (
-          responseJsonServer.email !== objectValuesForm.email ||
-          responseJsonServer.password !== objectValuesForm.password
-        ) {
+      setTimeout(() => {
+        const responseJsonServer = JSON.parse(JSON.stringify(response.data[0]));
+        if (response.ok) {
+          const objectValuesForm = JSON.parse(JSON.stringify(valuesForm[0]));
+          if (
+            responseJsonServer.email !== objectValuesForm.email ||
+            responseJsonServer.password !== objectValuesForm.password
+          ) {
+            dispatch({
+              type: ERROR_VALIDATION,
+              logged: false,
+              payload: 'Error Credenciales Invalidas',
+              loading: false
+            });
+          }
+        } else {
           dispatch({
-            type: ERROR_VALIDATION,
+            type: SET_LOGGED_USER,
             logged: false,
-            payload: 'Error Credenciales Invalidas'
+            payload: response.problem,
+            loading: false
           });
         }
-      } else {
         dispatch({
           type: SET_LOGGED_USER,
-          logged: false,
-          payload: response.problem
+          logged: true,
+          name: responseJsonServer.name,
+          loading: false
         });
-      }
-      dispatch({
-        type: SET_LOGGED_USER,
-        logged: true,
-        name: responseJsonServer.name
-      });
+      }, 2000);
     };
   },
   offNotification() {

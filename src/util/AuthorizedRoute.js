@@ -4,8 +4,10 @@ import { connect } from 'react-redux';
 
 class AuthorizedRoute extends React.Component {
   componentWillMount() {}
+
   render() {
-    const { component: Component, pending, logged, ...rest } = this.props;
+    const { component: Component, logged, ...rest } = this.props;
+
     return (
       <Route
         {...rest}
