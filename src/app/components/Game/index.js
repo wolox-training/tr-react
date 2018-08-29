@@ -21,6 +21,7 @@ class Game extends Component {
     const current = history[history.length - 1];
     const squares = current.squares.slice();
     if (this.calculateWinner(squares) && this.state.stepNumber + 1 === this.state.history.length) {
+      return;
     }
     squares[i] = this.state.xIsNext ? 'X' : 'O';
     this.setState({
