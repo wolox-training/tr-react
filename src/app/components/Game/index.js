@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+
+import NavBar from '../NavBar/layout';
 
 import Board from './components/Board';
 import styles from './styles.scss';
@@ -88,15 +90,18 @@ class Game extends Component {
     });
 
     return (
-      <div className={styles.game}>
-        <div className={styles.gameBoard}>
-          <Board squares={current.squares} onClick={i => this.handleClick(i)} />
+      <Fragment>
+        <NavBar />
+        <div className={`${styles.game} m-left-2`}>
+          <div className={styles.gameBoard}>
+            <Board squares={current.squares} onClick={i => this.handleClick(i)} />
+          </div>
+          <div className={styles.gameInfo}>
+            <div>{status}</div>
+            <ol>{moves}</ol>
+          </div>
         </div>
-        <div className={styles.gameInfo}>
-          <div>{status}</div>
-          <ol>{moves}</ol>
-        </div>
-      </div>
+      </Fragment>
     );
   }
 }

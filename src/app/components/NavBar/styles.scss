@@ -1,0 +1,35 @@
+@import '../../../scss/colors';
+
+.top-bar {
+  display: flex;
+}
+.nav-container {
+  display: flex;
+  flex: 1;
+  background-color: $MineShaft;
+
+  a:nth-last-child(1) {
+    margin-left: auto;
+  }
+}
+.nav-buttons {
+  font-size: 12px;
+  text-decoration: none;
+  float: left;
+  padding: 15px;
+  background-color: $MineShaft;
+  color: $White;
+  border-bottom: 1px solid $Black;
+
+  &:hover {
+    background-color: $OldBrick;
+    padding-bottom: 12px;
+    border-bottom: 2px solid $Black;
+    margin: -1px;
+    color: $White;
+  }
+  &:active {
+    background-color: $Emperor;
+    color: $White;
+  }
+}
