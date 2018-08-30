@@ -1,9 +1,12 @@
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
+@import '../../../../../scss/colors';
+
+.border-container {
+  border-bottom: 1px solid $DustyGray;
+  border-left: 1px solid $DustyGray;
 }
 
-.status {
-  margin-bottom: 10px;
+.board-row {
+    clear: both;
+    content: "";
+    display: table;
 }
